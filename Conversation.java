@@ -1,6 +1,19 @@
+import java.util.Scanner;
 class Conversation {
 
   public static void main(String[] arguments) {
-    // You will start the conversation here.
+
+  Scanner sc = new Scanner(System.in);
+
+    System.out.println("Welcome to my guessing game");
+    int rounds = sc.nextInt();
+
+    System.out.println("Hi there, what do you want to talk about?");
+
+    
+
+
+
+
   }
 }
