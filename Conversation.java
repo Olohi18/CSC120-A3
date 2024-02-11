@@ -15,7 +15,8 @@ class Conversation {
   int length = response.size();
 
   System.out.println(length);  
-  int x = response.get()
+  
+    
 
   // System.out.println(response);
   //int index = response.get(rand.nextInt(response.charAt()));
@@ -30,20 +31,21 @@ class Conversation {
   System.out.println("Hi there, what do you want to talk about?");
   for (int i = 1; i <= rounds; i++){
     String input = sc.nextLine();
-    System.out.println("");
+    
+    System.out.println(response.get(rand.nextInt(length)));
     }
   System.out.println("Goodbye. Thanks for talking to me");
   sc.close();
 
   }
 
-}
+
 
   
 
-  
+} 
 
 
-    int x = response.get(rand.nextInt(length));
+    // int x = response.get(rand.nextInt(length));
 
-    int randomElement = givenList.get(rand.nextInt(givenList.size()));
+    // int randomElement = givenList.get(rand.nextInt(givenList.size()));
