@@ -13,8 +13,8 @@ class Conversation {
 
   //Initializes random responses
   String resp[] = {"That sounds fun", "Tell me more", "Can you elaborate on that?", "How old are you?", "What?", "Pardon?"};
-  List <String> response = Arrays.asList(resp);
-  int length = response.size();
+  List <String> candid_response = Arrays.asList(resp);
+  int length = candid_response.size();
 
   //Defines the list variable
   List <String> transcript = new ArrayList<String>();
@@ -39,7 +39,7 @@ class Conversation {
   transcript.add(Welcome);
 
   for (int i = 1; i <= rounds; i++)
-  {
+    {String response = "";
     String input = sc.nextLine();
     transcript.add(input);
     //input = " " + input.toLowerCase() + " ";
@@ -52,27 +52,29 @@ class Conversation {
        |input.contains("my ")
        |input.contains("your ")){
 
-        //convert all input lowercase
+        String[] words = input.split("\\s+" );
+        for (String word: words){
+            if (word.equals("I"))
+                {word = "you";}
+            else if (word.equals("me"))
+                {word = "you";}
+            else if (word.equals("am"))
+                {word = "are";}
+            else if (word.equals("you"))
+                {word = "I";}
+            else if (word.equals("my"))
+                {word = "your";}
+            else if (word.equals("your"))
+                {word = "my";}
 
-
-         //mirror misbehaving
-        process = input.replace("I ", "You "); // works with I
-        //process = process.replace("me ", "you "); // how do I make just me work
-        process = process.replace("you ", "I ");
-        process = process.replace("am ", "are "); // works with am 
-        process = process.replace("my ", "your ");
-        process = process.replace("your ", "my ");
-        process = process.replace("are ", "am ");//same
-
-       
-
-
-        
-        System.out.println(process);}
+            response += word + " ";}
+        System.out.println(response);
+          }
+            
 
     else{
-      String random_response ;
-      random_response = response.get(rand.nextInt(length - 1));
+      String random_response;
+      random_response = candid_response.get(rand.nextInt(length - 1));
       transcript.add(random_response);
       System.out.println(random_response);
   }
