@@ -5,12 +5,14 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-//Defines a program that allows for a simple conversation with a chatbot
 class Conversation {
 
-  
+ 
+/** Primarily initiates the conversation with the user
+ * @param takes in arguments from the user after short greeting message
+ * @return Chatbot's response
+ */ 
   public static void main(String[] arguments) {
-
 
   //Initializes the Scanner and random variables
   Scanner sc = new Scanner(System.in);
@@ -24,14 +26,12 @@ class Conversation {
   //Initializes a variable transcript to store the transcript of the conversation in form of an array
   List <String> transcript = new ArrayList<String>();
 
-  
-
   //Asks the user to enter number of rounds and set that to a variable "rounds"
   System.out.println("Enter number of rounds please");
   int rounds = sc.nextInt();
   sc.nextLine();
 
-  //Initializes Chatbot's automatic greeting messages
+  //Initialized Chatbot's automatic greeting messages
   String welcome = ("Hi there, what do you want to talk about?"); 
   String goodbye = ("Goodbye. Thanks for talking to me");
 
