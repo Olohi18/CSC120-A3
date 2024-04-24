@@ -17,15 +17,12 @@ class Conversation {
   //Initializes the Scanner and random variables
   Scanner sc = new Scanner(System.in);
   Random rand = new Random();
-
   //Assigns the canned responses as a list to a variable and sets its length to a vaiable "length." 
   String resp[] = {"That sounds fun", "Tell me more", "Can you elaborate on that?", "You are so smart to think in such depth", "Is there something else I can help with?", "Any more?", "All possible", "Thanks", "How old are you?", "What?", "Pardon?"};
   List <String> cannedResponse = Arrays.asList(resp);
   int length = cannedResponse.size();
-
   //Initializes a variable transcript to store the transcript of the conversation in form of an array
   List <String> transcript = new ArrayList<String>();
-
   //Asks the user to enter number of rounds and set that to a variable "rounds"
   System.out.println("Enter number of rounds please");
   int rounds = sc.nextInt();
