@@ -6,14 +6,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 class Conversation {
-
- 
 /** Primarily initiates the conversation with the user
  * @param takes in arguments from the user after short greeting message
  * @return Chatbot's response
  */ 
   public static void main(String[] arguments) {
-
   //Initializes the Scanner and random variables
   Scanner sc = new Scanner(System.in);
   Random rand = new Random();
@@ -31,17 +28,14 @@ class Conversation {
   //Initialized Chatbot's automatic greeting messages
   String welcome = ("Hi there, what do you want to talk about?"); 
   String goodbye = ("Goodbye. Thanks for talking to me");
-
-
   //The chatbot starts!!!! Time to play
   System.out.println(welcome);
   transcript.add(welcome);
  
-  for (int i = 1; i <= rounds; i++)  //Runs the conversation until requested number of rounds is reached
-    {String response = ""; 
+  for (int i = 1; i <= rounds; i++){  //Runs the conversation until requested number of rounds is reached
+    String response = ""; 
     String input = sc.nextLine().toLowerCase();
     transcript.add(input);
-
     //Checks if input has any of the a set of words to be mirrored
     if (input.contains("i ")
        |input.contains("are")
@@ -50,7 +44,6 @@ class Conversation {
        |input.contains("you ")
        |input.contains("my ")
        |input.contains("your ")){
-
         String[] words = input.split("\\s+" );
         //mirrors the required words
         for (String word: words){
@@ -70,30 +63,21 @@ class Conversation {
                 {word = "am";}
             else if (word.equals("?"))
                 {word = "";}
-            // else if (word.contains("?")) //Was wondering how to delete ? from user's original response so it doesn't appear twice in the Chatbot's response
-            //     {word.replace("?", "");}
-
-            response += word + " ";}
-
+        response += word + " ";}
         //Adds the Chatbot's response to a transcript
         transcript.add(response + "?");
-        System.out.println(response + "?");
-          }
-            
+        System.out.println(response + "?");}
     //runs if no mirrored word is found
     else{
       String randomResponse;
       randomResponse = cannedResponse.get(rand.nextInt(length - 1));
       transcript.add(randomResponse);
       System.out.println(randomResponse);
-  }
-  
-    }
-
+  } 
+}
   //prints the goodbye message
   System.out.println(goodbye);
   transcript.add(goodbye);
-  
   //prints the transcript
   System.out.println();
   System.out.println("It's nice talking with you. Here is the transcript of our conversation: ");
@@ -103,7 +87,6 @@ class Conversation {
     System.out.println(element);
   }
   sc.close(); //closes the scanner
-
 }
  }
   
